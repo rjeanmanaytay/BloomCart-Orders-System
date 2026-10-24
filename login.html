@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Sign in or create your BloomCart account.">
+<title>Sign In — BloomCart</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>🌷</span> BloomCart</a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="cart.html">Cart <b class="badge">0</b></a>
+    <a class="active" href="login.html" data-account-link aria-current="page">Sign in</a>
+  </nav>
+</header>
+
+<main class="section auth-section">
+  <div class="page-title">
+    <p class="kicker">WELCOME TO BLOOMCART</p>
+    <h1>Your little corner of lovely.</h1>
+    <p>Sign in to your account or create one to get started.</p>
+  </div>
+
+  <section class="form-card auth-card" aria-label="Account access">
+    <div class="auth-tabs" role="tablist" aria-label="Account access">
+      <button class="auth-tab active" id="signInTab" type="button" role="tab" aria-selected="true" aria-controls="signInPanel">Sign In</button>
+      <button class="auth-tab" id="signUpTab" type="button" role="tab" aria-selected="false" aria-controls="signUpPanel">Create Account</button>
+    </div>
+
+    <div id="authMessage" class="auth-message" role="status" aria-live="polite"></div>
+
+    <div id="signedInPanel" class="signed-in-panel" hidden>
+      <div class="check">✓</div>
+      <h2>You're signed in!</h2>
+      <p>Welcome, <strong id="accountName"></strong>.</p>
+      <p class="auth-note">Your account is saved in this browser for this BloomCart demo.</p>
+      <button id="signOutButton" class="mini" type="button">Sign Out</button>
+    </div>
+
+    <form id="signInPanel" class="auth-form" role="tabpanel" aria-labelledby="signInTab">
+      <h2 id="authTitle">Welcome back</h2>
+      <p>Sign in to continue to BloomCart.</p>
+      <label for="signInEmail">Email address</label>
+      <input id="signInEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+      <label for="signInPassword">Password</label>
+      <input id="signInPassword" name="password" type="password" autocomplete="current-password" required placeholder="Your password">
+      <button class="btn" type="submit">SIGN IN</button>
+      <p class="auth-switch">New to BloomCart? <button class="text-btn" type="button" data-show-signup>Create an account</button></p>
+    </form>
+
+    <form id="signUpPanel" class="auth-form" role="tabpanel" aria-labelledby="signUpTab" hidden>
+      <h2>Create your account</h2>
+      <p>Join BloomCart and make every moment bloom.</p>
+      <label for="signUpName">Your name</label>
+      <input id="signUpName" name="name" type="text" autocomplete="name" required maxlength="80" placeholder="Your name">
+      <label for="signUpEmail">Email address</label>
+      <input id="signUpEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com">
+      <label for="signUpPassword">Password <span class="auth-hint">(at least 8 characters)</span></label>
+      <input id="signUpPassword" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="Create a password">
+      <label for="confirmPassword">Confirm password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Enter your password again">
+      <button class="btn" type="submit">CREATE ACCOUNT</button>
+      <p class="auth-switch">Already have an account? <button class="text-btn" type="button" data-show-signin>Sign in</button></p>
+    </form>
+
+    <p class="auth-note">Demo only: accounts are stored in this browser and are not connected to a secure server. Do not use a real or reused password.</p>
+  </section>
+</main>
+
+<footer><strong>BloomCart</strong><p>Flowers that deliver happiness.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
